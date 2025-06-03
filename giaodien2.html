@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chúc mừng sinh nhật em!</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #d6336c;
+      margin-top: 40px;
+      opacity: 0;
+      animation: dropIn 1s ease-out forwards, glow 2s ease-in-out infinite alternate;
+      text-shadow: 0 0 10px #ffb3d9, 0 0 20px #ffcce6;
+    }
+    .message {
+      max-width: 700px;
+      margin: 30px auto 0;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #b30059;
+      min-height: 100px;
+      white-space: pre-wrap;
+      text-shadow: 0 0 8px #ff99cc;
+      animation: blink 1.8s ease-in-out infinite;
+    }
+    .cake-icon {
+      font-size: 6rem;
+      margin-top: 30px;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 1s ease;
+    }
+    .cake-icon.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .button-love {
+      margin-top: 30px;
+      padding: 16px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      background-color: #ff6b9f;
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .button-love.show {
+      opacity: 1;
+    }
+
+    @keyframes dropIn {
+      0% { opacity: 0; transform: translateY(-100px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #ffb3d9, 0 0 10px #ffcce6;
+      }
+      to {
+        text-shadow: 0 0 15px #ff66b2, 0 0 25px #ffb3d9;
+      }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+
+    .floating-icon {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatUp 6s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+    .heart {
+      position: absolute;
+      font-size: 1.8rem;
+      color: #ff4d88;
+      animation: heartFloat 3s ease-out forwards;
+    }
+    @keyframes heartFloat {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Chúc mừng sinh nhật em! 🎉</h1>
+  <div class="message" id="message"></div>
+  <div class="cake-icon" id="cake">🎂</div>
+  <button class="button-love" id="loveButton" onclick="showHearts()">
+    Những tình yêu của anh dành cho em ở đây nè 💖
+  </button>
+
+  <audio autoplay loop>
+    <source src="your-music-file.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  </audio>
+
+  <script>
+    const fullMessage = "Hôm nay là một ngày rất đặc biệt với em, và anh muốn gửi đến em tất cả những điều tuyệt vời nhất. Cảm ơn em vì đã luôn ở bên anh. Chúc em luôn rạng rỡ, hạnh phúc và thật nhiều yêu thương 💖";
+    let i = 0;
+    const speed = 50;
+
+    function typeMessage() {
+      if (i < fullMessage.length) {
+        document.getElementById('message').innerHTML += fullMessage.charAt(i);
+        i++;
+        setTimeout(typeMessage, speed);
+      } else {
+        document.getElementById('cake').classList.add('show');
+        setTimeout(() => {
+          document.getElementById('loveButton').classList.add('show');
+        }, 1000);
+      }
+    }
+
+    setTimeout(typeMessage, 1000);
+
+    const icons = ['🎁','🎈','🎉','🎊','🧁','🍰','🎂'];
+    setInterval(() => {
+      const icon = document.createElement('div');
+      icon.className = 'floating-icon';
+      icon.style.left = Math.random() * 100 + 'vw';
+      icon.style.fontSize = (Math.random() * 20 + 30) + 'px';
+      icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+      document.body.appendChild(icon);
+      setTimeout(() => icon.remove(), 6000);
+    }, 500);
+
+   function showHearts() {
+  window.location.href = "demo.html";
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhập mật khẩu của em</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ffe6ec, #ffc0cb);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .bg-moving {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: url('https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg');
+      background-repeat: repeat;
+      background-size: 250px;
+      opacity: 0.4;
+      animation: moveBackground 20s linear infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+    @keyframes moveBackground {
+      0% { background-position: 0 0; }
+      100% { background-position: -500px -500px; }
+    }
+    .container {
+      background: rgba(255, 240, 245, 0.4);
+      border-radius: 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      padding: 40px 30px 30px;
+      width: 95%;
+      max-width: 420px;
+      text-align: center;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #ff85a2;
+    }
+    .profile-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #d6336c;
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-bottom: 16px;
+      color: #d6336c;
+      font-weight: 800;
+    }
+    .password-display {
+      font-size: 28px;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+      background: #f8d7da;
+      border-radius: 12px;
+      padding: 10px;
+      font-weight: bold;
+      color: #721c24;
+      user-select: none;
+    }
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .keypad button {
+      padding: 16px 0;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      background-color: #ff85a2;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .keypad button:hover {
+      background-color: #e05275;
+    }
+    .action-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    .action-btns button {
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .clear-btn {
+      background: #dee2e6;
+    }
+    .submit-btn {
+      background: #d6336c;
+      color: white;
+    }
+    .popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 230, 240, 0.85);
+      border: 2px solid #ff85a2;
+      padding: 30px 40px;
+      border-radius: 24px;
+      color: #d6336c;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 10;
+      animation: popupIn 0.4s ease;
+      backdrop-filter: blur(4px);
+    }
+    .popup button {
+      margin-top: 14px;
+      background: #d6336c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .popup button:hover {
+      background: #a71d4f;
+    }
+    @keyframes popupIn {
+      0% { transform: translate(-50%, -60%) scale(0.8); opacity: 0; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-moving"></div>
+  <div class="container">
+    <img class="profile-img" src="https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg" alt="Ảnh đại diện">
+    <div class="profile-name">HIHI </div>
+    <h2>Nhập mật khẩu của em 💘</h2>
+    <div id="display" class="password-display">____</div>
+    <div class="keypad">
+      <button onclick="addDigit('1')">1</button>
+      <button onclick="addDigit('2')">2</button>
+      <button onclick="addDigit('3')">3</button>
+      <button onclick="addDigit('4')">4</button>
+      <button onclick="addDigit('5')">5</button>
+      <button onclick="addDigit('6')">6</button>
+      <button onclick="addDigit('7')">7</button>
+      <button onclick="addDigit('8')">8</button>
+      <button onclick="addDigit('9')">9</button>
+      <div></div>
+      <button onclick="addDigit('0')">0</button>
+      <div></div>
+    </div>
+    <div class="action-btns">
+      <button class="clear-btn" onclick="clearPassword()">Xoá</button>
+      <button class="submit-btn" onclick="submitPassword()">OK</button>
+    </div>
+    <div id="popup" class="popup">
+      Sai mất rồiii 😢 Nhập lại mật khẩu nha!
+      <br>
+      <button onclick="closePopup()">Thử lại</button>
+    </div>
+  </div>
+
+  <script>
+    const correctPassword = "1111";
+    let entered = "";
+
+    function addDigit(d) {
+      if (entered.length >= 4) return;
+      entered += d;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const masked = entered.padEnd(4, '_');
+      document.getElementById('display').textContent = masked;
+    }
+
+    function clearPassword() {
+      entered = "";
+      updateDisplay();
+    }
+
+    function submitPassword() {
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const todayPassword = day + month;
+
+      if (entered === correctPassword) {
+        window.location.href = "giaodien2.html";
+      } else {
+        showPopup();
+        clearPassword();
+      }
+    }
+
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Ngăn cuộn trang */
+    background-color: #f397d0; /* Nền vũ trụ tối màu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+#star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Để không cản click vào các element khác */
+    z-index: -1; /* Nằm dưới cùng */
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.5; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+#heart-container {
+    position: relative;
+    width: 900px; /* Điều chỉnh kích thước trái tim lớn */
+    height: 800px; /* Điều chỉnh kích thước trái tim lớn */
+    /* Căn giữa nếu body không dùng flex (ví dụ) */
+    /* margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.heart-image {
+    position: absolute;
+    width: 80px; /* Kích thước của mỗi ảnh nhỏ */
+    height: 100px;
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn, không bị méo */
+    border-radius: 8px; /* Bo góc nhẹ cho ảnh */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    opacity: 0; /* Ban đầu ẩn đi */
+    transform: scale(0.5); /* Ban đầu thu nhỏ */
+    /* Hiệu ứng xuất hiện sẽ được thêm bằng JS hoặc animation class */
+    animation: appear 1s forwards;
+}
+
+/* Animation cho ảnh xuất hiện */
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
