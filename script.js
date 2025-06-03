@@ -23,16 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
    // --- TẠO TRÁI TIM TỪ ẢNH ---
 // Dán 10 link ảnh trực tiếp tại đây:
         const userImageUrls = [
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg",
-        "https://i.postimg.cc/sgS4JCQp/emxinhdepvalunglinh.jpg"
+        "https://i.postimg.cc/MGP99bs8/o-p-nh-bowni-oder-2.jpg",
+        "https://i.postimg.cc/tRKprFfP/o-p-nh-bowni-oder.jpg",
+        "https://i.postimg.cc/5NSTwvMf/Moshi-moshii-1.jpg",
+        "https://i.postimg.cc/PJ2bqdBn/V-y-xinh-c-a-nh-Maikaa-studio.jpg",
+        "https://i.postimg.cc/XqGNr8PN/V-y-xinh-c-a-nh-Maikaa-studio-2.jpg",
+        "https://i.postimg.cc/V69pDbb9/m-t-n-pinkk-1.jpg",
+        "https://i.postimg.cc/59RqD2q8/V-y-xinh-c-a-nh-Maikaa-studio-3.jpg",
+        "https://i.postimg.cc/KcPMF7T7/X-n-ph-l-n-quanh-y.jpg",
+        "https://i.postimg.cc/CM2Kfm8p/473680837-1012016970641053-5039806952632182024-n.jpg",
+        "https://i.postimg.cc/bJssKMnL/473561343-1397736158304423-3234159667528460273-n.jpg"
 
         ];
 
