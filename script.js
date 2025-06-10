@@ -23,16 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
    // --- TẠO TRÁI TIM TỪ ẢNH ---
 // Dán 10 link ảnh trực tiếp tại đây:
         const userImageUrls = [
-        "https://i.postimg.cc/MGP99bs8/o-p-nh-bowni-oder-2.jpg",
-        "https://i.postimg.cc/tRKprFfP/o-p-nh-bowni-oder.jpg",
-        "https://i.postimg.cc/5NSTwvMf/Moshi-moshii-1.jpg",
-        "https://i.postimg.cc/PJ2bqdBn/V-y-xinh-c-a-nh-Maikaa-studio.jpg",
-        "https://i.postimg.cc/XqGNr8PN/V-y-xinh-c-a-nh-Maikaa-studio-2.jpg",
-        "https://i.postimg.cc/V69pDbb9/m-t-n-pinkk-1.jpg",
-        "https://i.postimg.cc/59RqD2q8/V-y-xinh-c-a-nh-Maikaa-studio-3.jpg",
-        "https://i.postimg.cc/KcPMF7T7/X-n-ph-l-n-quanh-y.jpg",
-        "https://i.postimg.cc/CM2Kfm8p/473680837-1012016970641053-5039806952632182024-n.jpg",
-        "https://i.postimg.cc/bJssKMnL/473561343-1397736158304423-3234159667528460273-n.jpg"
+"https://i.postimg.cc/tJqQsCD4/0ccdf616deeb6ab533fa.jpg",
+"https://i.postimg.cc/prLjqzqb/f0bb9790b36d07335e7c.jpg",
+"https://i.postimg.cc/KYVqBcN5/tulieu.jpg",
+"https://i.postimg.cc/BnP1tqj3/cf333f1c1be1afbff6f0.jpg",
+"https://i.postimg.cc/2yqCT5R8/501471c45539e167b828.jpg",
+"https://i.postimg.cc/1tb3kFKN/69190290266d9233cb7c.jpg",
+"https://i.postimg.cc/c1YxKrmX/995bdcd4f8294c771538.jpg",
+"https://i.postimg.cc/Wzt0n01F/65bfb5ca833737696e26.jpg",
+"https://i.postimg.cc/pdq96y7D/2c28e352d5af61f138be.jpg",
+"https://i.postimg.cc/kXg7TfCh/c5a528ea1e17aa49f306.jpg"
 
         ];
 
